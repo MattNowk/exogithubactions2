@@ -1,5 +1,8 @@
 name: exogithubactions
-on: push 
+on:
+  push:
+    branches:
+      - main
 jobs:
   build:
     name: Build du projet exercice
@@ -16,10 +19,6 @@ jobs:
         with:
           name: mon-exo
           path: dist/
-          only: -main
-        display_artifact:
-          stage: display
-          script:
-            - ls dist/ 
-          dependencies:
-            - build_and_upload
+      - name: Afficher l'artefact
+        if: always()
+        run: ls dist/
