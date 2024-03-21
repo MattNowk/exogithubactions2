@@ -13,7 +13,7 @@ jobs:
       - name: voir le contenu du repo
         run: ls -R  
       - name: Installer les dépendences
-        run: npm i
+        run: npm ci
       - name: Tester le projet
         run: npm test
       - name: Build le projet 
