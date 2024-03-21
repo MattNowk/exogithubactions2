@@ -20,5 +20,4 @@ jobs:
           name: mon-exo
           path: dist/
       - name: Afficher l'artefact
-        if: always()
         run: ls dist/
