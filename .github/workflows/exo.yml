@@ -8,6 +8,12 @@ jobs:
     name: Build du projet exercice
     runs-on: ubuntu-latest
     steps:
+      - name: Check repository
+        uses: actions/checkout@v4
+      - name: voir le contenu du repo
+        run: ls -R  
+      - name: Installer les dépendences
+        run: npm ci 
       - name: Installer les dépendences
         run: npm i
       - name: Tester le projet
