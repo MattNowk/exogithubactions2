@@ -1,0 +1,25 @@
+name: exogithubactions
+on: push 
+jobs:
+  build:
+    name: Build du projet exercice
+    runs-on: ubuntu-latest
+    steps:
+      - name: Installer les dépendences
+        run: npm i
+      - name: Tester le projet
+        run: npm test
+      - name: Build le projet 
+        run: npm run build
+      - name: Uploader le résultat du build comme artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mon-exo
+          path: dist/
+          only: -main
+        display_artifact:
+          stage: display
+          script:
+            - ls dist/ 
+          dependencies:
+            - build_and_upload
