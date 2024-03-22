@@ -1,4 +1,4 @@
-fais moi le reste : name: Workflow lors d'un push
+name: Workflow lors d'un push
 on: push
 jobs:
   mon_job:
